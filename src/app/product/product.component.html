@@ -1,0 +1,34 @@
+<form [formGroup]="Product">
+    <div class="container">
+      <div class="row d-flex justify-content-center">
+        <div class="col-8">
+  
+          <div class="mb-3">
+              <label for="title" class="form-label">Product Title</label>
+              <input type="email" class="form-control" id="title" placeholder="Product Title"  formControlName="title">
+              <span class="text-danger"[hidden]="productTitle.valid || productTitle.pristine ">required Field</span>
+              <span *ngIf="productTitle.errors?.['required']"></span>
+              <span class="text-danger" *ngIf="productTitle?.errors?.['minlength']">
+                  min length is {{productTitle?.errors?.['minlength']['actualLength']}}
+              </span>
+            </div>
+  
+            <div class="mb-3">
+              <label for="description" class="form-label">Product Description</label>
+              <textarea class="form-control" id="description" rows="3" placeholder="Enter Product Description"  formControlName="description"></textarea>
+              <span class="text-danger"[hidden]="productDescription.valid || productDescription.pristine ">required Field</span>
+            </div>
+  
+            <div class="mb-3">
+              <label for="image" class="form-label">Select Product image</label>
+              <input type="text"  class="form-control" id="image" rows="3" placeholder="Enter Product image URL"  formControlName="imgUrl"/>
+              <span class="text-danger"[hidden]="productImage.valid || productImage.pristine ">required Field</span>
+            </div>
+  
+            <input type="button" value="Add Product" class="btn btn-primary" [disabled]="Product.invalid"
+             (click)="sendProduct(Product.value)" (click)="sendProduct(Product)">
+        </div>
+      </div>
+    </div>
+  </form>
+   
