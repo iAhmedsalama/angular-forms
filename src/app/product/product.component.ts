@@ -1,6 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { IProduct } from '../_modules/IProduct';
 
 @Component({
   selector: 'app-product',

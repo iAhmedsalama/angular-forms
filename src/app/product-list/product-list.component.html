@@ -1,2 +1,2 @@
-<app-temp-form></app-temp-form>
-<app-product (getProductData)="displayProduct($event)"></app-product>
+<app-product *ngFor="let Product in ProductList"(getProductData)="displayProduct($event)"></app-product>
+

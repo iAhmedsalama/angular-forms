@@ -6,12 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./product-list.component.css'],
 })
 export class ProductListComponent implements OnInit {
-  Product: {} = {};
+  ProductList:object[] = [];
   constructor() {}
 
   ngOnInit(): void {}
 
   displayProduct(Product: any) {
-    this.Product = Product;
+    this.ProductList.push(Product);
   }
 }
